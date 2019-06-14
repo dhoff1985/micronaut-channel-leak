@@ -1,0 +1,11 @@
+micronaut:
+  application:
+    name: channel-leak
+  http:
+    client:
+      read-timeout: 1ms
+      pool:
+        enabled: true
+        max-connections: 20
+#        max-pending-aquires: 1
+#        acquire-timeout: 20

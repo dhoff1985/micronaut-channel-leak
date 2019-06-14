@@ -1,0 +1,5 @@
+profile: service
+defaultPackage: channel.leak
+---
+testFramework: spock
+sourceLanguage: groovy
