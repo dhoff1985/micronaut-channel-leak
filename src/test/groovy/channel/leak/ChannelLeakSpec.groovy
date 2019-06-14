@@ -18,18 +18,10 @@ class ChannelLeakSpec extends Specification {
 
     @Inject
     HttpClientIntroductionAdvice introductionAdvice
-
-    def "get price happy path"() {
-        when:
-        Price price = testClient.getPrice().join()
-
-        then:
-        price.value == '$5'
-    }
-
+    
     def "demonstrate channel leak"() {
         when:
-        (1..1000).collect {
+        (1..100).collect {
             testClient.getPrice()
         }.each {
             try {
